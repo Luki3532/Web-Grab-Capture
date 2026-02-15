@@ -1,0 +1,9 @@
+streamlit
+beautifulsoup4
+requests
+pandas
+lxml
+openpyxl
+fastapi
+uvicorn[standard]
+pydantic
