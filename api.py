@@ -8,6 +8,13 @@ Run with: uvicorn api:app --reload --port 8000
 Docs at: http://localhost:8000/docs
 """
 
+# Use system CA certificates for SSL verification
+try:
+    import truststore
+    truststore.inject_into_ssl()
+except ImportError:
+    pass
+
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import StreamingResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -38,12 +45,13 @@ This API allows you to scrape and extract:
 ```python
 import requests
 
-response = requests.get("http://localhost:8000/api/scrape", params={"url": "https://example.com"})
+response = requests.get("https://lucascode.org/webgrab-api/api/scrape", params={"url": "https://example.com"})
 data = response.json()
 print(data["company"]["name"])
 ```
     """,
     version="1.0.0",
+    root_path="/webgrab-api",
     contact={
         "name": "Lucas E. Carpenter",
         "url": "https://lucascode.org",

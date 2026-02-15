@@ -81,9 +81,7 @@ st.markdown("""
         border-radius: 12px;
         padding: 1.5rem;
         margin-bottom: 1rem;
-        transition: border-color 0.2s ease;
     }
-    .feature-card:hover { border-color: var(--accent-blue); }
     .feature-icon {
         width: 40px;
         height: 40px;
@@ -179,9 +177,7 @@ st.markdown("""
         border: 1px solid var(--border-color);
         border-radius: 8px;
         margin-bottom: 0.75rem;
-        transition: border-color 0.2s;
     }
-    .project-item:hover { border-color: var(--accent-blue); }
     .project-icon {
         width: 36px;
         height: 36px;
@@ -432,6 +428,214 @@ with col2:
         <div class="feature-desc">Gather company information for industry analysis and market positioning studies</div>
     </div>
     """, unsafe_allow_html=True)
+
+# REST API Section for Developers
+st.markdown('<div class="section-title"><i class="fas fa-code"></i>REST API for Developers</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="info-card">
+    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0 0 1rem 0;">
+        Web Grab & Capture includes a full <strong style="color: var(--text-primary);">RESTful API</strong> so you can integrate website scraping directly into your applications, scripts, and automation pipelines. 
+        The API is powered by <strong style="color: var(--text-primary);">FastAPI</strong> and includes interactive Swagger documentation.
+    </p>
+    <a href="https://lucascode.org/webgrab-api/docs" target="_blank" class="creator-link" style="display: inline-flex; margin-bottom: 1rem;">
+        <i class="fas fa-book"></i>Open Interactive API Docs (Swagger UI)
+    </a>
+</div>
+""", unsafe_allow_html=True)
+
+# API Endpoints Table
+st.markdown("""
+<div class="info-card">
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color);">
+        <i class="fas fa-route" style="color: var(--accent-blue);"></i>
+        <strong style="color: var(--text-primary); font-size: 1rem;">API Endpoints</strong>
+    </div>
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+        <thead>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <th style="text-align: left; padding: 8px; color: var(--text-muted); font-weight: 500;">Endpoint</th>
+                <th style="text-align: left; padding: 8px; color: var(--text-muted); font-weight: 500;">Method</th>
+                <th style="text-align: left; padding: 8px; color: var(--text-muted); font-weight: 500;">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="border-bottom: 1px solid rgba(48,54,61,0.5);">
+                <td style="padding: 8px;"><code style="background: rgba(88,166,255,0.1); color: var(--accent-blue); padding: 2px 6px; border-radius: 4px;">/api/scrape</code></td>
+                <td style="padding: 8px; color: var(--accent-green);">GET</td>
+                <td style="padding: 8px; color: var(--text-secondary);">Extract all data from a website (company, contact, social, images)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(48,54,61,0.5);">
+                <td style="padding: 8px;"><code style="background: rgba(88,166,255,0.1); color: var(--accent-blue); padding: 2px 6px; border-radius: 4px;">/api/contact</code></td>
+                <td style="padding: 8px; color: var(--accent-green);">GET</td>
+                <td style="padding: 8px; color: var(--text-secondary);">Extract only emails and phone numbers</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(48,54,61,0.5);">
+                <td style="padding: 8px;"><code style="background: rgba(88,166,255,0.1); color: var(--accent-blue); padding: 2px 6px; border-radius: 4px;">/api/social</code></td>
+                <td style="padding: 8px; color: var(--accent-green);">GET</td>
+                <td style="padding: 8px; color: var(--text-secondary);">Extract only social media profile links</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(48,54,61,0.5);">
+                <td style="padding: 8px;"><code style="background: rgba(88,166,255,0.1); color: var(--accent-blue); padding: 2px 6px; border-radius: 4px;">/api/images</code></td>
+                <td style="padding: 8px; color: var(--accent-green);">GET</td>
+                <td style="padding: 8px; color: var(--text-secondary);">Download all images as a ZIP archive</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(48,54,61,0.5);">
+                <td style="padding: 8px;"><code style="background: rgba(88,166,255,0.1); color: var(--accent-blue); padding: 2px 6px; border-radius: 4px;">/api/icons</code></td>
+                <td style="padding: 8px; color: var(--accent-green);">GET</td>
+                <td style="padding: 8px; color: var(--text-secondary);">Download only logos and favicons as ZIP</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;"><code style="background: rgba(88,166,255,0.1); color: var(--accent-blue); padding: 2px 6px; border-radius: 4px;">/health</code></td>
+                <td style="padding: 8px; color: var(--accent-green);">GET</td>
+                <td style="padding: 8px; color: var(--text-secondary);">Health check endpoint</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+""", unsafe_allow_html=True)
+
+# Code Examples
+st.markdown("""
+<div style="display: flex; align-items: center; gap: 10px; margin: 1.5rem 0 1rem 0;">
+    <i class="fas fa-terminal" style="color: var(--accent-blue);"></i>
+    <strong style="color: var(--text-primary); font-size: 1rem;">Code Examples</strong>
+</div>
+""", unsafe_allow_html=True)
+
+tab_python, tab_js, tab_curl = st.tabs(["Python", "JavaScript", "cURL"])
+
+with tab_python:
+    st.code("""import requests
+
+# Scrape all data from a website
+response = requests.get(
+    "https://lucascode.org/webgrab-api/api/scrape",
+    params={"url": "https://example.com"}
+)
+data = response.json()
+
+print(f"Company: {data['company']['name']}")
+print(f"Emails: {data['contact']['emails']}")
+print(f"Phones: {[p['number'] for p in data['contact']['phones']]}")
+print(f"Images found: {data['image_count']}")
+
+# Download all images as a ZIP file
+response = requests.get(
+    "https://lucascode.org/webgrab-api/api/images",
+    params={"url": "https://example.com"}
+)
+with open("images.zip", "wb") as f:
+    f.write(response.content)
+""", language="python")
+
+with tab_js:
+    st.code("""// Using fetch (works in browser and Node.js 18+)
+const response = await fetch(
+  "https://lucascode.org/webgrab-api/api/scrape?url=https://example.com"
+);
+const data = await response.json();
+
+console.log("Company:", data.company.name);
+console.log("Emails:", data.contact.emails);
+console.log("Social:", data.social);
+
+// Get just contact info
+const contacts = await fetch(
+  "https://lucascode.org/webgrab-api/api/contact?url=https://example.com"
+).then(r => r.json());
+
+console.log("Phones:", contacts.phones);
+""", language="javascript")
+
+with tab_curl:
+    st.code("""# Get all data from a website
+curl "https://lucascode.org/webgrab-api/api/scrape?url=https://example.com"
+
+# Get just contact information
+curl "https://lucascode.org/webgrab-api/api/contact?url=https://example.com"
+
+# Get just social media links
+curl "https://lucascode.org/webgrab-api/api/social?url=https://example.com"
+
+# Download all images as ZIP
+curl -o images.zip "https://lucascode.org/webgrab-api/api/images?url=https://example.com"
+
+# Download just logos and favicons
+curl -o icons.zip "https://lucascode.org/webgrab-api/api/icons?url=https://example.com"
+""", language="bash")
+
+# Example Response
+st.markdown("""
+<div style="display: flex; align-items: center; gap: 10px; margin: 1.5rem 0 1rem 0;">
+    <i class="fas fa-reply" style="color: var(--accent-blue);"></i>
+    <strong style="color: var(--text-primary); font-size: 1rem;">Example Response</strong>
+    <span style="color: var(--text-muted); font-size: 0.85rem;">&mdash; GET /api/scrape?url=https://example.com</span>
+</div>
+""", unsafe_allow_html=True)
+
+st.code("""{
+  "success": true,
+  "url": "https://example.com",
+  "company": {
+    "name": "Example Company",
+    "description": "We do amazing things",
+    "keywords": "tech, innovation",
+    "title": "Example Company | Home"
+  },
+  "contact": {
+    "emails": ["hello@example.com", "support@example.com"],
+    "phones": [
+      {"number": "+1 (555) 123-4567", "label": "Sales"},
+      {"number": "+1 (555) 987-6543", "label": "Support"}
+    ],
+    "address": "123 Main St, City, State 12345"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/example",
+    "twitter": "https://twitter.com/example",
+    "facebook": null,
+    "instagram": null,
+    "youtube": null
+  },
+  "images": [
+    {"type": "favicon", "url": "https://example.com/favicon.ico", "alt": "favicon"},
+    {"type": "logo", "url": "https://example.com/logo.png", "alt": "Company Logo"}
+  ],
+  "image_count": 15,
+  "logo_count": 3
+}""", language="json")
+
+# Error Handling
+st.markdown("""
+<div class="info-card" style="margin-top: 1rem;">
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color);">
+        <i class="fas fa-exclamation-triangle" style="color: #D29922;"></i>
+        <strong style="color: var(--text-primary); font-size: 1rem;">Error Handling</strong>
+    </div>
+    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.75rem;">
+        All endpoints return consistent HTTP status codes:
+    </p>
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+        <tr style="border-bottom: 1px solid rgba(48,54,61,0.5);">
+            <td style="padding: 6px 8px;"><code style="background: rgba(63,185,80,0.1); color: var(--accent-green); padding: 2px 6px; border-radius: 4px;">200</code></td>
+            <td style="padding: 6px 8px; color: var(--text-secondary);">Success</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(48,54,61,0.5);">
+            <td style="padding: 6px 8px;"><code style="background: rgba(210,153,34,0.1); color: #D29922; padding: 2px 6px; border-radius: 4px;">400</code></td>
+            <td style="padding: 6px 8px; color: var(--text-secondary);">Invalid URL or request error</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(48,54,61,0.5);">
+            <td style="padding: 6px 8px;"><code style="background: rgba(210,153,34,0.1); color: #D29922; padding: 2px 6px; border-radius: 4px;">404</code></td>
+            <td style="padding: 6px 8px; color: var(--text-secondary);">No images or data found</td>
+        </tr>
+        <tr>
+            <td style="padding: 6px 8px;"><code style="background: rgba(248,81,73,0.1); color: #F85149; padding: 2px 6px; border-radius: 4px;">500</code></td>
+            <td style="padding: 6px 8px; color: var(--text-secondary);">Server error</td>
+        </tr>
+    </table>
+</div>
+""", unsafe_allow_html=True)
 
 # Disclaimer
 st.markdown("""

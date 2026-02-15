@@ -1,3 +1,10 @@
+# Use system CA certificates for SSL verification
+try:
+    import truststore
+    truststore.inject_into_ssl()
+except ImportError:
+    pass
+
 import streamlit as st
 import requests
 from bs4 import BeautifulSoup
